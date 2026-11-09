@@ -1,0 +1,18 @@
+[Unit]
+Description=Node.js DevOps demo
+After=network.target
+[Service]
+Type=simple
+User=devopsdemo
+Group=devopsdemo
+WorkingDirectory=/opt/devops-demo/app
+ExecStart=/usr/bin/node /opt/devops-demo/app/server.js
+Environment=PORT=3000
+Restart=on-failure
+RestartSec=3
+NoNewPrivileges=true
+PrivateTmp=true
+ProtectSystem=strict
+ProtectHome=true
+[Install]
+WantedBy=multi-user.target
