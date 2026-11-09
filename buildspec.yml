@@ -1,0 +1,16 @@
+version: 0.2
+phases:
+  install:
+    runtime-versions:
+      nodejs: 22
+  build:
+    commands:
+      - cd app
+      - npm test
+      - cd ..
+artifacts:
+  files:
+    - appspec.yml
+    - app/**/*
+    - scripts/**/*
+    - systemd/**/*
